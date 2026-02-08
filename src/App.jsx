@@ -5,12 +5,14 @@ import FeaturesBar from "./components/sections/FeaturesBar";
 import BlogSection from "./components/sections/BlogSection";
 import BestSelleProduct from "./components/sections/BestSelleProduct";
 import "./style.css";
+import HeroBanner from "./components/sections/HeroBanner";
 
 function App() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
+        <HeroBanner />
         <FeaturesBar />
         <TrendingProducts />
         <BestSelleProduct />
