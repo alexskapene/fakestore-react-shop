@@ -32,13 +32,15 @@ function Header() {
       </section>
 
       <button
-        className="md:hidden h-8 w-8 text-3xl display-flex items-center justify-center text-foreground transition-transform duration-300 z-50"
+        className={`md:hidden h-8 w-8 text-3xl display-flex items-center justify-center text-foreground hover:scale-110 transition-transform duration-300 z-50`}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
-        {isMenuOpen ? <IoCloseSharp /> : <HiOutlineMenu />}
+        {isMenuOpen ? <IoCloseSharp className="" /> : <HiOutlineMenu />}
       </button>
       {isMenuOpen && (
-        <nav className=" md:hidden flex flex-col items-start gap-4 md:gap-8 absolute top-0 left-0 w-full bg-background/90 px-8 py-6 z-10">
+        <nav
+          className={`md:hidden flex flex-col items-start gap-y-10 md:gap-8 absolute top-0 left-0 w-full bg-background/90 px-16 pt-16 transition-all duration-600 z-10 ${isMenuOpen ? "animate-fadeIn" : "animate-fadeOut"}`}
+        >
           <Link
             to="/"
             className=" w-full pb-5 border-b-2 border-foreground/20 text-xl font-medium hover:text-foreground/70"
