@@ -1,3 +1,6 @@
+import React from "react";
+
+export default Header;
 import React, { useState, useRef, useEffect } from "react";
 import { Outlet, Link } from "react-router";
 import { Button } from "@/components/ui/button";
