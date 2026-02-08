@@ -54,16 +54,34 @@ function Header() {
       <nav className="hidden md:flex items-center gap-4 text-lg font-medium md:gap-8">
         <Link
           to="/"
-          className="hover:text-popover-foreground/85 transition durection-300"
+          className="text-lg hover:text-card-foreground/80 transition duration-300"
         >
           Home
         </Link>
-        <Link to="/features" className="">
+        <Link
+          to="/features"
+          className="text-lg hover:text-card-foreground/80 transition duration-300"
+        >
           Features
         </Link>
-        <Link to="/electronics">Electronics</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
+        <Link
+          to="/electronics"
+          className="text-lg hover:text-card-foreground/80 transition duration-300"
+        >
+          Electronics
+        </Link>
+        <Link
+          to="/about"
+          className="text-lg hover:text-card-foreground/80 transition duration-300"
+        >
+          About
+        </Link>
+        <Link
+          to="/blog"
+          className="text-lg hover:text-card-foreground/80 transition duration-300"
+        >
+          Blog
+        </Link>
         <Outlet />
       </nav>
 
@@ -73,7 +91,7 @@ function Header() {
         <Button
           variant="secondary"
           size="icon"
-          className={`rounded-full ${isSearchOpen ? "hidden" : null}`}
+          className={`rounded-full w-8 h-8 bg-muted ${isSearchOpen ? "hidden" : null}`}
           onClick={() => setIsSearchOpen(true)}
         >
           <FaSearch />
@@ -103,12 +121,20 @@ function Header() {
         )}
 
         {/* Cart Button */}
-        <Button variant="secondary" size="icon" className="rounded-full">
+        <Button
+          variant="secondary"
+          size="icon"
+          className="rounded-full w-8 h-8 bg-muted"
+        >
           <FaCartShopping />
         </Button>
 
         {/* User Button */}
-        <Button variant="secondary" size="icon" className="rounded-full">
+        <Button
+          variant="secondary"
+          size="icon"
+          className="rounded-full w-8 h-8 bg-muted"
+        >
           <FaUser />
         </Button>
       </section>
