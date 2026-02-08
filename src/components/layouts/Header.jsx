@@ -1,6 +1,6 @@
 import React from "react";
 
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Outlet, Link } from "react-router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -51,9 +51,16 @@ function Header() {
       <h1 className="text-2xl md:text-3xl font-semibold">FastShop</h1>
 
       {/* Menu desktop */}
-      <nav className="hidden md:flex items-center gap-4 md:gap-8">
-        <Link to="/">Home</Link>
-        <Link to="/features">Features</Link>
+      <nav className="hidden md:flex items-center gap-4 text-lg font-medium md:gap-8">
+        <Link
+          to="/"
+          className="hover:text-popover-foreground/85 transition durection-300"
+        >
+          Home
+        </Link>
+        <Link to="/features" className="">
+          Features
+        </Link>
         <Link to="/electronics">Electronics</Link>
         <Link to="/about">About</Link>
         <Link to="/blog">Blog</Link>
