@@ -7,18 +7,16 @@ import BestSelleProduct from "./components/sections/BestSelleProduct";
 import "./style.css";
 
 function App() {
-    return (
-        <div className="flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-1">
-                <FeaturesBar />
-                <TrendingProducts />
-                <BestSelleProduct />
-                <BlogSection />
-            <main className="flex-1">
-
-            </main>
-        </div>
-    );
+  return (
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      <main className="flex-1">
+        <FeaturesBar />
+        <TrendingProducts />
+        <BestSelleProduct />
+        <BlogSection />
+      </main>
+    </div>
+  );
 }
 export default App;
