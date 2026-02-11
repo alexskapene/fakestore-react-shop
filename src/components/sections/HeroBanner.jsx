@@ -1,6 +1,8 @@
 import * as React from "react";
 import HeroBanner1 from "../../assets/images/herosection.png";
-import HeroBanner2 from "../../assets/images/herosection2.png";
+import Slide4 from "../../assets/images/slide4.png";
+import Slide3 from "../../assets/images/slide3.png";
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -13,13 +15,47 @@ export default function HeroBanner() {
   const [api, setApi] = React.useState(null);
   const [current, setCurrent] = React.useState(0);
 
+  // contenair slides desktop
   const slides = [
     {
       image: HeroBanner1,
-      description: "Uscover ethnical cultivated and Fair-Trade gifts",
+      description: (
+        <h1>
+          Discover ethnical <br /> cultivated and Fair-Trade gifts
+        </h1>
+      ),
+      button: (
+        <Button variant="default" size="lg">
+          Show Now
+        </Button>
+      ),
     },
-    { image: HeroBanner2},
-    { image: HeroBanner2 },
+    {
+      image: Slide4,
+      description: (
+        <h1>
+          Discover ethnical <br /> cultivated and Fair-Trade gifts
+        </h1>
+      ),
+      button: (
+        <Button variant="default" size="lg">
+          Show Now
+        </Button>
+      ),
+    },
+    {
+      image: Slide3,
+      description: (
+        <h1>
+          Discover ethnical <br /> cultivated and Fair-Trade gifts
+        </h1>
+      ),
+      button: (
+        <Button variant="default" size="lg">
+          Show Now
+        </Button>
+      ),
+    },
   ];
 
   React.useEffect(() => {
@@ -36,11 +72,21 @@ export default function HeroBanner() {
     <div className="relative w-full h-[300px] md:h-screen">
       <Carousel setApi={setApi} className="w-full h-full">
         <CarouselContent>
-          {slides.map((_, index) => (
+          {slides.map((slide, index) => (
             <CarouselItem key={index}>
-              <Card className="h-full">
-                <CardContent className="flex h-full items-center justify-center text-4xl font-bold">
-                  Slide {index + 1}
+              <Card className="w-full h-screen ">
+                <CardContent className=" w-full h-full grid grid-cols-2 md:grid-cols-2 items-center  md:px-48 text-4xl font-bold bg-background  overflow-hidden ">
+                  <div className=" text-center space-y-8 bg-transparent text-4xl">
+                    <h1>{slide.description}</h1>
+                    {slide.button}
+                  </div>
+                  <div className="hidden md:block h-full relative -bottom-12 ">
+                    <img
+                      src={slide.image}
+                      alt=""
+                      className=" w-full h-full object-cover object-top"
+                    />
+                  </div>
                 </CardContent>
               </Card>
             </CarouselItem>
@@ -57,8 +103,8 @@ export default function HeroBanner() {
             className={cn(
               "h-3 w-3 rounded-full transition-all",
               current === index
-                ? "bg-black w-6"
-                : "bg-gray-400 hover:bg-gray-600",
+                ? "bg-primary w-6"
+                : "bg-foreground hover:bg-gray-600",
             )}
           />
         ))}
