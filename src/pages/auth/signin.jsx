@@ -16,6 +16,9 @@ function SignIn() {
   const handleSignUp = async (e) => {
     e.preventDefault();
     setMessage("");
+    setName("");
+    setEmail("");
+    setPassword("");
 
     if (!name.trim() || !email.trim() || !password.trim()) {
       setMessage("Veuillez remplir tous les champs.");
