@@ -17,24 +17,27 @@ import About from "./pages/about";
 import Features from "./pages/features";
 import Product from "./pages/product";
 import Blog from "./pages/blog";
+import Cart from "./pages/cart";
+import Login from "./pages/auth/login";
 import Footer from "./components/layouts/Footer";
 import "./style.css";
 function App() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col">
       <Header />
-      <section className="flex-1">
-        <HeroBanner />
-        <FeaturesBar />
-        <TrendingProducts />
-        <BestSelleProduct />
-        <PromoBanner />
-        <NewArrivalSection />
-        <BrandsSection />
-        <BlogSection />
-      </section>
-      <Footer />
-    </main>
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+        <Footer />
+      </main>
+    </div>
   );
 }
 
