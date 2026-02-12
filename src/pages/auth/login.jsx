@@ -11,7 +11,7 @@ function Login() {
     e.preventDefault();
     setMessage("");
 
-    if (!email || !passWord) {
+    if (!email.trim() || !passWord.trim()) {
       setMessage("Veillez remplir tous les champs.");
       return;
     }
@@ -22,9 +22,9 @@ function Login() {
         passWord,
       });
       setMessage("Connexion reussie !");
-      localStorage.setItem("auth Token", res.data.token);
+      localStorage.setItem("auth Token", resp.data.token);
 
-      console.log("Token", ResizeObserver.data.token);
+      console.log("Token", resp.data.token);
     } catch (err) {
       if (err.message) {
         setMessage(err.response.data.message);
@@ -53,7 +53,9 @@ function Login() {
                 value={passWord}
                 onChange={(e) => setPassWorrd(e.target.value)}
               />
-              <Button type="submit">LogIn</Button>
+              <Button type="submit" variant="default" size="lg">
+                LogIn
+              </Button>
             </form>
           </div>
         </section>

@@ -11,9 +11,6 @@ import BrandsSection from "./components/sections/BrandsSection";
 import NewArrivalSection from "./components/sections/NewArrivalSection";
 import PromoBanner from "./components/sections/PromoBanner";
 import Footer from "./components/layouts/Footer";
-import Login from "./pages/auth/login";
-import { createBrowserRouter, Router, Routes } from "react-router-dom";
-import { Outlet, RouterProvider } from "react-router";
 
 import Home from "./pages/home";
 import About from "./pages/about";
@@ -24,19 +21,20 @@ import Footer from "./components/layouts/Footer";
 import "./style.css";
 function App() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-1">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/features" element={<Features />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/blog" element={<Blog />} />
-        </Routes>
-        <Footer />
-      </main>
-    </div>
+      <section className="flex-1">
+        <HeroBanner />
+        <FeaturesBar />
+        <TrendingProducts />
+        <BestSelleProduct />
+        <PromoBanner />
+        <NewArrivalSection />
+        <BrandsSection />
+        <BlogSection />
+      </section>
+      <Footer />
+    </main>
   );
 }
 
