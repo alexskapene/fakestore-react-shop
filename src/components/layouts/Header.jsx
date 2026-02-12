@@ -122,22 +122,26 @@ function Header() {
         )}
 
         {/* Cart Button */}
-        <Button
-          variant="secondary"
-          size="icon"
-          className="rounded-full w-8 h-8 bg-muted"
-        >
-          <FaCartShopping />
-        </Button>
+        <Link to="/cart">
+          <Button
+            variant="secondary"
+            size="icon"
+            className="rounded-full w-8 h-8 bg-muted"
+          >
+            <FaCartShopping />
+          </Button>
+        </Link>
 
         {/* User Button */}
-        <Button
-          variant="secondary"
-          size="icon"
-          className="rounded-full w-8 h-8 bg-muted"
-        >
-          <FaUser />
-        </Button>
+        <Link to="/login">
+          <Button
+            variant="secondary"
+            size="icon"
+            className="rounded-full w-8 h-8 bg-muted"
+          >
+            <FaUser />
+          </Button>
+        </Link>
       </section>
 
       {/* Burger menu mobile */}
