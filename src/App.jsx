@@ -22,25 +22,28 @@ import Login from "./pages/auth/login";
 import SignIn from "./pages/auth/signin";
 import Footer from "./components/layouts/Footer";
 import "./style.css";
+import { CartProvider } from "./services/cartService";
 function App() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <Header />
-      <main className="flex-1">
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/features" element={<Features />} />
-            <Route path="/product" element={<Product />} />
-            <Route path="/blog" element={<Blog />} />
-          </Route>
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signin" element={<SignIn />} />
-        </Routes>
-      </main>
-    </div>
+    <CartProvider>
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1">
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/features" element={<Features />} />
+              <Route path="/product" element={<Product />} />
+              <Route path="/blog" element={<Blog />} />
+            </Route>
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signin" element={<SignIn />} />
+          </Routes>
+        </main>
+      </div>
+    </CartProvider>
   );
 }
 
